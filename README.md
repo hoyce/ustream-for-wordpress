@@ -1,4 +1,6 @@
-Ustream for WordPress is a plugin that enables the user to embed Ustream live and recorded embeds. Put the url for the ustream video you'd like between the embed tags.
+# Ustream for WordPress
+
+A Wordpress plugin that enables the user to embed Ustream live and recorded embeds. Put the url for the ustream video you'd like between the embed tags.
 
     [embed]http://www.ustream.tv/recorded/98889950[/embed]
     [embed]http://www.ustream.tv/channel/iss-hdev-payload[/embed]
