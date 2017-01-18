@@ -66,3 +66,7 @@ You should now be able to paste use the plugin using the `[embed][/embed]` tags.
 = 2.2 =
 * Updated url's to author site
 * Tested in WordPress 4.7.1
+
+= 2.3 =
+* Changed from add_provider to register_handler when operating under ssl
+* Tested in WordPress 4.7.1
