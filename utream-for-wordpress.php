@@ -32,9 +32,17 @@ Class ustream_for_wordpress {
     function get_ustream_code($atts, $content=null) {
         extract(shortcode_atts(array('cid' => '', 'vid' => ''), $atts));
         if (is_numeric($cid)) {
-            return ustream_for_wordpress::secure_embed_handler(null, null, 'http://www.ustream.tv/channel/'.$cid, null);
+            if(is_ssl()) {
+                return ustream_for_wordpress::secure_embed_handler(null, null, 'https://www.ustream.tv/channel/'.$cid, null);
+            } else {
+                return wp_oembed_get('http://www.ustream.tv/channel/'.$cid);
+            }
         } else if (is_numeric($vid)) {
-            return ustream_for_wordpress::secure_embed_handler(null, null, 'http://www.ustream.tv/recorded/'.$vid, null);
+            if(is_ssl()) {
+                return ustream_for_wordpress::secure_embed_handler(null, null, 'https://www.ustream.tv/recorded/'.$vid, null);
+            } else {
+                return wp_oembed_get('http://www.ustream.tv/recorded/'.$vid);
+            }
         } else {
           return 'Error: Neither the "cid" nor the "vid" was passed to the ustream tag!';
         }
