@@ -1,11 +1,11 @@
 <?php
 /*
  Plugin Name: UStream for WordPress
- Plugin URI: http://www.geckosolutions.se/blog/wordpress-plugins/
+ Plugin URI: https://www.hoyce.com/wordpress-plugins/
  Description: Add easy to use functionality to embed UStrem videos and broadcasts.
  Version: 2.3
  Author: Niklas Olsson
- Author URI: http://www.geckosolutions.se
+ Author URI: https://www.hoyce.com
  License: GPL 2.0, @see http://www.gnu.org/licenses/gpl-2.0.html
  */
 
