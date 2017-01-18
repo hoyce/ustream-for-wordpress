@@ -5,7 +5,7 @@ Donate link: http://ustream.tv/
 Tags: embed, oembed, video, ustream, player, viewer, broadcast, live
 Requires at least: 3.0
 Tested up to: 4.7.1
-Stable tag: 2.1.0
+Stable tag: 2.2.0
 
 == Description ==
 
@@ -61,4 +61,8 @@ You should now be able to paste use the plugin using the `[embed][/embed]` tags.
 
 = 2.1 =
 * Changed embed code use oEmbed specification and service
+* Tested in WordPress 4.7.1
+
+= 2.2 =
+* Updated url's to author site
 * Tested in WordPress 4.7.1
