@@ -11,7 +11,7 @@
 
 Class ustream_for_wordpress {
 
-    function secure_embed_handler($matches, $attr, $url, $rawattr) {
+    static function secure_embed_handler($matches, $attr, $url, $rawattr) {
         $request = new WP_Http;
         $result = $request->request( 'https://www.ustream.tv/oembed?url='.$url );
         $ustream = json_decode($result['body']);
@@ -20,7 +20,7 @@ Class ustream_for_wordpress {
         }
     }
 
-    function oembed_provider() {
+    static function oembed_provider() {
         if(is_ssl()) {
             wp_embed_register_handler( 'ustream', '/http(s)?:\/\/(www\.)?ustream\.tv\/.{0,}/i', array('ustream_for_wordpress', 'secure_embed_handler'));
         } else {
@@ -29,7 +29,7 @@ Class ustream_for_wordpress {
     }
 
     // Maintain backward compatibility of this plugin
-    function get_ustream_code($atts, $content=null) {
+    static function get_ustream_code($atts, $content=null) {
         extract(shortcode_atts(array('cid' => '', 'vid' => ''), $atts));
         if (is_numeric($cid)) {
             return ustream_for_wordpress::secure_embed_handler(null, null, 'http://www.ustream.tv/channel/'.$cid, null);
